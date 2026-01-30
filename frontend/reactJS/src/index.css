@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FullCalendar Overrides */
+.fc-calendar {
+  @apply w-full bg-white p-4 rounded-lg shadow relative;
+}
+
+/* Barre d'outils */
+.fc .fc-toolbar {
+  @apply flex flex-col md:flex-row gap-2 mb-4;
+}
+.fc .fc-toolbar-title {
+  @apply text-lg font-semibold text-center;
+}
+.fc .fc-button {
+  @apply bg-[#FF0035] hover:bg-[#d9002c] text-white py-1 px-3 rounded text-sm;
+}
+
+/* Style des jours 
+.fc .fc-daygrid-day {
+  @apply relative min-h-[80px] transition-colors duration-200;
+}
+*/
+/* Changement de couleur au survol */
+.fc .fc-daygrid-day:hover {
+  @apply bg-blue-200 cursor-pointer; /* Fond bleu clair au survol */
+}
+
+/* Numéro des jours 
+.fc .fc-daygrid-day-number {
+  @apply text-sm p-1;
+}
+*/
+/* Style des événements */
+.fc-event {
+  @apply m-0.5 p-1 rounded border-none;
+  background-color: var(--fc-event-bg-color);
+}
+.fc-event-content {
+  @apply p-0.5;
+}
+.fc-event-title {
+  @apply text-xs font-medium truncate;
+}
+.fc-event-networks {
+  @apply text-[0.65rem] text-gray-600 truncate;
+}
+.fc .fc-daygrid-day-frame {
+  @apply p-1;
+}
+
+/* Tooltip flottant pour la date */
+#tooltip-date {
+  @apply fixed bg-blue-600 text-white text-sm px-4 py-2 rounded-lg shadow-lg z-50;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fc .fc-toolbar {
+    @apply gap-1;
+  }
+  
+  .fc .fc-toolbar-title {
+    @apply text-base;
+  }
+  
+  .fc .fc-daygrid-day {
+    @apply min-h-[60px];
+  }
+}
+
+
+
+/*CSS SAMI CALENDRIER 3ENDKOUM PAS TOUCHER*/
+.fc-daygrid-day {
+  position: relative;
+}
+
+.scheduled-count {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: #28a745;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+/*FIN CSS SAMI CALENDRIER 3ENDKOUM PAS TOUCHER*/
+
+
+
+/* Supprime les flèches sur Chrome, Safari et Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Supprime les flèches sur Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.bg-animated {
+    background: linear-gradient(-45deg, #FF0035, #ff6b81, #fcb045, #fd1d1d);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .blob1, .blob2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #FF0035;
+    opacity: 0.2;
+    filter: blur(100px);
+    border-radius: 50%;
+    animation: blobMove 20s infinite ease-in-out;
+  }
+  
+  .blob2 {
+    background: #fcb045;
+    top: auto;
+    left: auto;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 5s;
+  }
+  
+  @keyframes blobMove {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(-100px, 50px) scale(1.2); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+  
+  .bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: bubbleFloat 20s linear infinite;
+  }
+  
+  .bubble:nth-child(odd) {
+    width: 15px;
+    height: 15px;
+    animation-duration: 12s;
+    background: rgba(255,255,255,0.05);
+  }
+  
+  @keyframes bubbleFloat {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-120vh) translateX(100px);
+      opacity: 0;
+    }
+  }
