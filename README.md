@@ -89,10 +89,8 @@ ascendia/
 
 ## 👥 Équipe
 
-Développé par **Aly Hachem Reda** dans le cadre de la Licence 3 Informatique (S6).
+Développé par **Sami CHICHEB**, **Samir EL KHOUMRI**, **Aly HACHEM REDA** et **Sofiane HAMMAR**  dans le cadre de la Licence 3 Informatique.
 
 Ce projet est à usage pédagogique.
 
 ---
-
-<p align="center">Fait avec ❤️ pour simplifier le Social Media Management.</p>
